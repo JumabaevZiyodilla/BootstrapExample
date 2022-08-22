@@ -1,49 +1,49 @@
 /* VARIABLES */
 
-:root{
+:root {
   /* --main-text-color : #fff; */
   /* --main-bg-color : #fff; */
   /* --main-font-size : 16px; */
   /* --main-font-weight : 400; */
   /* --main-line-height : 1.5; */
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* GENERAL */
 @font-face {
-  font-family: 'Livvic';
+  font-family: "Playfair Display";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   src: local(''),
-       url('../fonts/livvic-v13-latin-600.woff2') format('woff2'), 
-       url('../fonts/livvic-v13-latin-600.woff') format('woff'); 
+       url('../fonts/playfair-display-v30-latin-regular.woff2') format('woff2'),
+       url('../fonts/playfair-display-v30-latin-regular.woff') format('woff'); 
 }
 
-@font-face {
-  font-family: 'Livvic';
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-       url('../fonts/livvic-v13-latin-700.woff2') format('woff2'),
-       url('../fonts/livvic-v13-latin-700.woff') format('woff'); 
-}
-html{
+html {
   height: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-img{
+img {
   display: block;
   height: auto;
 }
 
-body{
+a {
+  display: inline-block;
+}
+
+body {
   display: flex;
   flex-direction: column;
   height: 100%;
   margin: 0;
   padding: 0;
-  /* font-family: "Roboto", "Arial", sans-serif; */
+  font-family: var(--bs-font-sans-serif);
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 .visually-hidden {
@@ -64,8 +64,8 @@ body{
 
 
 /* CONTAINER */
-.container{
-  max-width: 1240px;
+.container {
+  max-width: 1340px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 20px;
@@ -73,20 +73,56 @@ body{
 }
 
 /* STICKY-FOOTER */
-.site-main{
+.site-main {
   flex-grow: 1;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:"Playfair Display", "Georgia", "Times New Roman", serif;
+  line-height: 1.2;
+  font-weight: 600;
+}
+dt{
+  font-weight: 700;
+}
 /* SITE HEADER START */
+.col-4 {
+  width: auto;
+}
+
+.header-large-link {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+}
 
 /* SITE HEADER END */
 
 /* SITE MAIN START */
-
-/* SECTION  START */
-
-/* SECTION  END */
-
+.hero-title {
+  font-size: 2.5rem;
+}
+.hero-link::after{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  content: "";
+}
+@media only screen and (min-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+.hero-item{
+  border: 1px solid #dee2e6;
+}
 /* SECTION  START */
 
 /* SECTION  END */
@@ -94,5 +130,11 @@ body{
 /* SITE MAIN END */
 
 /* SITE FOOTER START */
-
+.site-footer{
+  padding: 2.5rem 0;
+    color: #727272;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 0.05rem solid #e5e5e5;
+}
 /* SITE FOOTER END */
